@@ -27,7 +27,13 @@ const result = computerChoice(option);
 console.log(result);
 
 function roundGame(playerSelection, computerSelection) {
-
+    if ( computerSelection === 'rock' && playerSelection === 'paper') {
+        return "You win! Paper beats Rock."
+    } else if (computerSelection === 'rock' && playerSelection === 'rock') {
+        return "It's a tie! Both chose Rock!"        
+    } else if (computerSelection === 'rock' && playerSelection === 'scissors') {
+        return "You loose! Rock beats Scissors."
+    }
 }
 
 const playerSelection = playerChoice.toLowerCase();

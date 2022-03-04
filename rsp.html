@@ -16,25 +16,39 @@
 
 const option = ['rock', 'scissors', 'paper']
 
+function game() {
+    playRound();
+}
+
+function playRound() {
+    const playerSelection = playerChoice();
+    const computerSelection = computerChoice();           
+    const roundWinner = round(playerSelection,computerSelection)
+    console.log(roundWinner)
+}
+
 function playerChoice() {
     let playerInput = prompt("Make your choice between: 'Rock' 'Scissors' or 'Paper'")
     playerInput = playerInput.toLowerCase();
-    console.log(playerInput)
+    console.log("Player's choice: " + playerInput)
 }
 
 function computerChoice() {
    return option[Math.floor(Math.random * option.length)];
 }
 
-function playRound() {
-    const playerSelection = playerChoice();
-    const computerSelection = computerChoice();            
-
-}
-
-
-function game() {
-    playRound();
+function round(Pchoice,Cchoice) {
+    if (Pchoice == Cchoice) {
+        return "It's a tie!";
+    } else if (
+        (Pchoice === "paper" && Cchoice === "rock") ||
+        (Pchoice === "scissors" && Cchoice === "paper") ||
+        (Pchoice === "rock" && Cchoice === "scissors")) 
+    {
+        return "You WIN!"
+    } else {
+        return "You lose. Try again!"
+    }
 }
 
 game();

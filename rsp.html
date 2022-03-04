@@ -17,48 +17,27 @@
 const option = ['rock', 'scissors', 'paper']
 
 function playerChoice() {
-    let playerInput = ("Make your choice between: 'Rock' 'Scissors' or 'Paper'")
+    let playerInput = prompt("Make your choice between: 'Rock' 'Scissors' or 'Paper'")
+    playerInput = playerInput.toLowerCase();
+    console.log(playerInput)
 }
 
 function computerChoice() {
    return option[Math.floor(Math.random * option.length)];
 }
 
-function playRound(playerSelection, computerSelection) {
-
+function playRound() {
     const playerSelection = playerChoice();
-    const computerSelection = computerChoice();
-
-    if (computerSelection === 'rock' && playerSelection === 'paper') {
-        return "You win! Paper beats Rock.";
-    } else if (computerSelection === 'rock' && playerSelection === 'rock') {
-        return "It's a tie! Both chose Rock!";        
-    } else if (computerSelection === 'rock' && playerSelection === 'scissors') {
-        return "You loose! Rock beats Scissors.";
-    } else if (computerSelection === 'paper' && playerSelection === 'scissors') {
-        return "You win! Scissors beats Paper.";
-    } else if (computerSelection === 'paper' && playerSelection === 'paper') {
-        return "It's a tie! Both chose Paper!";
-    } else if (computerSelection === 'paper' && playerSelection === 'rock') {
-        return "You loose! Paper beats Rock.";
-    } else if (computerSelection === 'scissors' && playerSelection === 'rock') {
-        return "You win! Rock beats Scissors.";
-    } else if (computerSelection === 'scissors' && playerSelection === 'scissors') {
-        return "It's a tie! Both chose Scissors!";
-    } else if (computerSelection === 'scissors' && playerSelection === 'paper') {
-        return "You loose! Scissors beats Paper.";
-    }              
+    const computerSelection = computerChoice();            
 
 }
 
 
 function game() {
-    for (let i = 0; i < 5; i++) {
-        
-    }
+    playRound();
 }
 
-
+game();
 
 </script>
 

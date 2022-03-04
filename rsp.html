@@ -13,6 +13,20 @@
 </body>
 
 <script>
+let playerChoice = ("Make your choice between: 'Rock' 'Scissors' or 'Paper'")
+
+
+function computerChoice(opt) {
+    const randomOpt = Math.floor(Math.random() * opt.length);
+    const choice = opt[randomOpt];
+    return choice;
+}
+console.log(computerChoice)
+
+const option = ['rock', 'scissors', 'paper']
+
+const result = computerChoice(option);
+console.log(result);
 
 </script>
 

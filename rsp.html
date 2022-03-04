@@ -13,20 +13,21 @@
 </body>
 
 <script>
-let playerChoice = ("Make your choice between: 'Rock' 'Scissors' or 'Paper'")
-
-
-function computerChoice(opt) {
-    const randomOpt = Math.floor(Math.random() * opt.length);
-    const choice = opt[randomOpt];
-    return choice;
-}
 
 const option = ['rock', 'scissors', 'paper']
-const result = computerChoice(option);
-console.log(result);
 
-function roundGame(playerSelection, computerSelection) {
+function playerChoice() {
+    let playerInput = ("Make your choice between: 'Rock' 'Scissors' or 'Paper'")
+}
+
+function computerChoice() {
+   return option[Math.floor(Math.random * option.length)];
+}
+
+function playRound(playerSelection, computerSelection) {
+
+    const playerSelection = playerChoice();
+    const computerSelection = computerChoice();
 
     if (computerSelection === 'rock' && playerSelection === 'paper') {
         return "You win! Paper beats Rock.";
@@ -50,8 +51,14 @@ function roundGame(playerSelection, computerSelection) {
 
 }
 
-const playerSelection = playerChoice.toLowerCase();
-const computerSelection = computerChoice();
+
+function game() {
+    for (let i = 0; i < 5; i++) {
+        
+    }
+}
+
+
 
 </script>
 
